@@ -1,0 +1,22 @@
+#map { height: 100%; }
+
+.leaflet-popup-close-button {
+    display:none;
+}
+
+.leaflet-label-overlay {
+    line-height:0px;
+    margin-top: 9px;
+    position:absolute;
+}
+
+/* top map container for community view */
+#map .leaflet-google-layer{
+    z-index:10!important;
+    background-color:transparent!important;
+}
+/* bottom google map for county view */
+/* #map #_GMapContainer_15{ */
+/*     z-index:auto!important; */
+/*     background-color:transparent!important; */
+/* } */
