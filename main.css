@@ -88,6 +88,11 @@
     left:3px;
 }
 
+#county-vernon{
+    position:relative;
+    left:-10px;
+}
+
 #county-jackson{
     position:relative;
     left:10px;
