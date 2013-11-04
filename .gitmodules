@@ -1,3 +1,6 @@
 [submodule "Leaflet.label"]
 	path = Leaflet.label
 	url = https://github.com/Leaflet/Leaflet.label
+[submodule "leaflet-plugins"]
+	path = leaflet-plugins
+	url = https://github.com/shramov/leaflet-plugins
