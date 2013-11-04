@@ -8,6 +8,13 @@
     line-height:0px;
     margin-top: 9px;
     position:absolute;
+    font-weight:normal!important;
+    height:0;
+}
+.leaflet-label-overlay b {
+    font-size:10px;
+    color:#444;
+    /* font-weight:normal!important; */
 }
 
 /* top map container for community view */
@@ -20,3 +27,124 @@
 /*     z-index:auto!important; */
 /*     background-color:transparent!important; */
 /* } */
+
+#county-buffalo{
+    position:relative;
+    top:-15px;
+}
+
+#county-pepin{
+    position:relative;
+    top:-11px;
+    left:10px;
+}
+
+#county-jackson{
+    position:relative;
+    left:10px;
+}
+
+#county-monroe{
+    position:relative;
+    top:12px;
+    left:5px;
+}
+
+#county-eau-claire{
+    line-height:1;
+    position:relative;
+    top:-10px;
+    left:12px;
+}
+
+#county-waupaca{
+    position:relative;
+    left:-5px;
+    top:-5px;
+}
+
+#county-outagamie{
+    position:relative;
+    top:7px;
+}
+
+#county-kewaunee{
+    position:relative;
+    top:-5px;
+}
+
+#county-winnebago{
+    position:relative;
+    top:5px;
+}
+#county-shawano{
+    position:relative;
+    top:5px;
+}
+
+#county-manitowoc{
+    position:relative;
+    left:20px;
+}
+#county-calumet{
+    position:relative;
+    top:-10px;
+}
+#county-milwaukee{
+    position:relative;
+    left:25px;
+    top:15px;
+}
+
+ #county-washington{
+    position:relative;
+    top:13px;
+}
+#county-ozaukee{
+    position:relative;
+    top:3px;
+    left:18px;
+}
+
+#county-jefferson{
+    position:relative;
+    top:10px;
+}
+#county-waukesha{
+    position:relative;
+    top:-7px;
+}
+
+#county-green-lake{
+    position:relative;
+    top:-10px;
+    left:10px;
+    line-height:1;
+    
+}
+#county-fond-du-lac{
+    position:relative;
+    line-height:1;
+    top:-17px;
+
+}
+#county-juneau{
+    position:relative;
+    left:-5px;
+    line-height:1;
+    
+}
+#county-adams{
+    position:relative;
+    top:-15px;
+    left:0px;
+    line-height:1;
+    
+}
+#county-la-crosse{
+    position:relative;
+    top:-5px;
+    left:5px;
+    line-height:1;
+    
+}

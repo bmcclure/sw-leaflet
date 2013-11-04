@@ -58,7 +58,7 @@ $(document).ready(function(){
 	"color": "black",
 	"weight": 1,
 	"opacity": 1,
-	"fillColor":"white",
+	"fillColor":"pink",
         "fillOpacity": .5
     };
 
@@ -155,7 +155,8 @@ $(document).ready(function(){
 
     // county layer
     county_layer = L.geoJson(wisc_counties,{
-	onEachFeature: onEachCounty
+	onEachFeature: onEachCounty,
+	style:county_styles
     });
 
     // community layer
@@ -165,7 +166,6 @@ $(document).ready(function(){
     map.addLayer(county_label_layers);
 
     function highlightCounty(e) {
-
     	if (map.getZoom() < 9) {
 	    var layer = e.target;
 	    layer.setStyle(county_active_style);
@@ -235,21 +235,13 @@ $(document).ready(function(){
     }
 
     function onEachCounty(feature, layer) {
-    	if (map.getZoom() >= 9) {
-	    layer.setStyle(county_demoted_style);
-
-    	}
-    	if (map.getZoom() < 9) {
-	    layer.setStyle(county_active_style);
-    	}
-
-
 	var bounds = L.latLngBounds(feature.geometry.coordinates);
  	var lat = bounds.getCenter()['lat'];
  	var lng = bounds.getCenter()['lng'];
 
 	var labelLocation = new L.LatLng(lng,lat);
-	var labelTitle = new L.LabelOverlay(labelLocation, "<b id='"+feature.properties.NAME+"'>" + feature.properties.NAME + "</b>");
+	var labelTitle = new L.LabelOverlay(labelLocation, "<b id='county-"+feature.properties.NAME.toLowerCase().replace(/ /g, '-')+"'>" + feature.properties.NAME + "</b>");
+	labelTitle.COUNTY = feature.properties.NAME;
 	//map.addLayer(labelTitle);
 	county_label_layers.addLayer(labelTitle);
 
@@ -282,7 +274,7 @@ $(document).ready(function(){
     }
 
     function getCommunityByCountyID(county_id){
-	var communities_filtered = wisc_towns.features.filter(
+	var communities_filtered = wisc_communities.features.filter(
 	    function(e){
 		if(e.properties['GEOID10'].substr(2,3) == county_id){
 		    return true;
