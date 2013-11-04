@@ -39,6 +39,55 @@
     left:10px;
 }
 
+#county-lincoln{
+    position:relative;
+    top:14px;
+}
+
+#county-st-croix{
+    line-height:1;
+    position:relative;
+    top:-10px;
+    left:10px;
+}
+
+#county-pierce{
+    position:relative;
+    top:5px;
+    left:5px;
+}
+
+#county-polk{
+    position:relative;
+    left:5px;
+}
+
+#county-burnett{
+    position:relative;
+    left:10px;
+}
+
+#county-bayfield{
+    position:relative;
+    left:-10px;
+}
+
+#county-ashland{
+    position:relative;
+    top:20px;
+    left:-10px;
+}
+
+#county-forest{
+    position:relative;
+    top:10px;
+}
+
+#county-waushara{
+    position:relative;
+    left:3px;
+}
+
 #county-jackson{
     position:relative;
     left:10px;

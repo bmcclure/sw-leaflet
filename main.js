@@ -240,7 +240,8 @@ $(document).ready(function(){
  	var lng = bounds.getCenter()['lng'];
 
 	var labelLocation = new L.LatLng(lng,lat);
-	var labelTitle = new L.LabelOverlay(labelLocation, "<b id='county-"+feature.properties.NAME.toLowerCase().replace(/ /g, '-')+"'>" + feature.properties.NAME + "</b>");
+	var county_id = feature.properties.NAME.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
+	var labelTitle = new L.LabelOverlay(labelLocation, "<b id='county-"+ county_id +"'>" + feature.properties.NAME + "</b>");
 	labelTitle.COUNTY = feature.properties.NAME;
 	//map.addLayer(labelTitle);
 	county_label_layers.addLayer(labelTitle);
