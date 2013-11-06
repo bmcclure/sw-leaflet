@@ -44,6 +44,7 @@ $(document).ready(function(){
     var shorewest_red = "#000";
     var county_label_layers = L.layerGroup();
     var community_label_layers = L.layerGroup();
+    var zoomed = false;
 
     // county init styles
     var county_styles = {
@@ -188,7 +189,17 @@ $(document).ready(function(){
     }
 
     function resetCountyStyle(e) {
-    	county_layer.resetStyle(e.target);
+        county_layer.setStyle(getCountyStyle());
+    }
+
+    function getCountyStyle() {
+        var style = county_styles;
+
+        if (zoomed) {
+            style = county_demoted_style;
+        }
+
+        return style;
     }
 
     function resetCommunityStyle(e) {
@@ -196,22 +207,25 @@ $(document).ready(function(){
     }
 
     function zoomToFeature(e) {
-	county_label_layers.clearLayers();
-	if(typeof(city_label_layers) !== 'undefined'){
-	    city_label_layers.clearLayers();
-	}
-	if(community_layer !== null){
-	    community_layer.clearLayers();
-	}
-	//county_layer.setStyle(inactive_county_styles);
-	map.fitBounds(e.target.getBounds());
-	addCommunityLayer(e);
+        county_label_layers.clearLayers();
 
-	// geojson.setStyle(function(style_args){
-	//     var m_e = e;
-	//     m_e.target.setStyle({fillColor:"red"})
+        if(community_layer !== null){
+            community_layer.clearLayers();
+        }
 
-	// });
+        map.fitBounds(e.target.getBounds());
+
+        zoomed = true;
+
+        county_layer.setStyle(county_demoted_style);
+
+        addCommunityLayer(e);
+
+        // geojson.setStyle(function(style_args){
+        //     var m_e = e;
+        //     m_e.target.setStyle({fillColor:"red"})
+
+        // });
     }
 
     function styleCounty(e,a){
